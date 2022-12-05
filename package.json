@@ -1,6 +1,9 @@
 {
   "name": "advent-2022",
   "private": "true",
+  "scripts": {
+    "build": "tsc -b"
+  },
   "dependencies": {
     "@types/node": "^18.11.10",
     "path": "^0.12.7",
