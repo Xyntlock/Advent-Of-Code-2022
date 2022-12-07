@@ -33,7 +33,7 @@ instrNums.forEach(instrs => {
     cratesToMove.push(stacks[stackToMoveFrom].pop()!)
   }
   cratesToMove.reverse()
-  stacks[stackToMoveTo] = stacks[stackToMoveTo].concat(cratesToMove)
+  stacks[stackToMoveTo].push(...cratesToMove)
 })
 
 // print top crate of each stack

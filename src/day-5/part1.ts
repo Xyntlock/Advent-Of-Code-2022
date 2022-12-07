@@ -10,18 +10,12 @@ let stacks: string[][] = new Array(numOfStacks).fill([])
 // populate stacks with crates and empty strings
 for (let i = 0; i < stacks.length; i += 1) {
   for (let j = 0; j < stackRows.length; j += 1) {
-    stacks[i] = stacks[i].concat(stackRows[j].charAt(i * 4 + 1))
+    const char = stackRows[j].charAt(i * 4 + 1)
+    if(char !== ' ') {
+      stacks[i] = stacks[i].concat(stackRows[j].charAt(i * 4 + 1))
+    }
   }
 }
-
-// remove empty strings from stacks
-stacks = stacks.map(stack => {
-  const newStack = []
-  for(let i = 0; i < stack.length; i += 1) {
-    if (stack[i] !== ' ') newStack.push(stack[i])
-  }
-  return newStack
-})
 
 // get relevant numbers from instructions
 const instrNums = instrs.map(instr => { 
@@ -35,7 +29,7 @@ instrNums.forEach(instrs => {
   const stackToMoveTo = instrs[2] - 1
 
   for(let i = 0; i < instrs[0]; i += 1) {
-    stacks[stackToMoveTo] = stacks[stackToMoveTo].concat(stacks[stackToMoveFrom].pop()!) 
+    stacks[stackToMoveTo].push(stacks[stackToMoveFrom].pop()!) 
   }
 })
 
