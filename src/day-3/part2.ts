@@ -1,6 +1,5 @@
 import { readFileSync } from 'fs'
 import path from 'path'
-import { findAncestor } from 'typescript'
 
 const data = readFileSync(path.resolve(__dirname, './input.txt'))
 const string = data.toString()
