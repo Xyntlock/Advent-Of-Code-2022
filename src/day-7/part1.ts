@@ -20,14 +20,6 @@ const home: Directory = {
   parentDirectory: null
 }
 
-const getDirectory = (directory: Directory): string => {
-  if (!directory.parentDirectory) 
-  {
-    return ''
-  }
-  return getDirectory(directory.parentDirectory) + '/' + directory.name
-}
-
 let currentDir = home
 
 commands.forEach((command, index) => {
