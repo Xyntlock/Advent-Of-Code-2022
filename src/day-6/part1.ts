@@ -7,7 +7,7 @@ const chars = data.split('')
 const markers = chars.slice(0, 4)
 
 let i = 3
-while(!markers.map(marker => markers.filter(char => char === marker).length === 1).every(bool => bool)) {
+while(!(new Set(markers).size === 4)) {
   i += 1
   markers[i % 4] = chars[i]
 }
