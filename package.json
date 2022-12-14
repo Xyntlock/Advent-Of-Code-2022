@@ -6,8 +6,12 @@
   },
   "dependencies": {
     "@types/node": "^18.11.10",
+    "compute-lcm": "^1.1.2",
     "path": "^0.12.7",
     "ts-node": "^10.9.1",
     "typescript": "^4.9.3"
+  },
+  "devDependencies": {
+    "@types/compute-lcm": "^1.1.0"
   }
 }
