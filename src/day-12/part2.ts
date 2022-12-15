@@ -65,8 +65,6 @@ generateNodes(startRowIndex, startColumnIndex)
 const startingPoints = nodes.filter(node => node.elevation === 'a')!
 let shortestDistance: number = Number.MAX_SAFE_INTEGER
 
-const start = Date.now()
-
 startingPoints.forEach(start => {
   nodes.forEach(node => {
     node.distance = node === start ? 0 : Number.MAX_SAFE_INTEGER
@@ -95,5 +93,4 @@ startingPoints.forEach(start => {
   shortestDistance = shortestDistance > distance ? distance : shortestDistance
 })
 
-const end = Date.now()
-console.log(shortestDistance, new Date(end - start).getMilliseconds() * 1000)
+console.log(shortestDistance)
